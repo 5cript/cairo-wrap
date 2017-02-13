@@ -21,6 +21,7 @@ namespace Cairo
 
     #define PRESERVE true
 
+    void applyPen(DrawContext* ctx, Pen const& pen);
     void stroke(DrawContext* ctx, Pen const& pen, bool preserve = false);
     void fill(DrawContext* ctx, Pen const& pen, bool preserve = false);
 }

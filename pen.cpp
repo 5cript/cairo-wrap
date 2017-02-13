@@ -28,7 +28,7 @@ namespace Cairo
 
     }
 //#####################################################################################################################
-    void apply(DrawContext* ctx, Pen const& pen)
+    void applyPen(DrawContext* ctx, Pen const& pen)
     {
         cairo_set_line_width(*ctx, pen.width);
         cairo_set_source_rgba(*ctx, pen.color.r, pen.color.g, pen.color.b, pen.color.a);
@@ -36,7 +36,7 @@ namespace Cairo
 //---------------------------------------------------------------------------------------------------------------------
     void stroke(DrawContext* ctx, Pen const& pen, bool preserve)
     {
-        apply(ctx, pen);
+        applyPen(ctx, pen);
         if (preserve)
             cairo_stroke_preserve(*ctx);
         else
@@ -45,7 +45,7 @@ namespace Cairo
 //---------------------------------------------------------------------------------------------------------------------
     void fill(DrawContext* ctx, Pen const& pen, bool preserve)
     {
-        apply(ctx, pen);
+        applyPen(ctx, pen);
         if (preserve)
             cairo_fill_preserve(*ctx);
         else
