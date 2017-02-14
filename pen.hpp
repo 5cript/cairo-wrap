@@ -9,6 +9,9 @@ namespace Cairo
         double width;
         RGBA color;
 
+        constexpr Pen(Pen const&) = default;
+        constexpr Pen(Pen&&) = default;
+
         Pen& operator=(Pen const&) = default;
         Pen& operator=(Pen&&) = default;
 

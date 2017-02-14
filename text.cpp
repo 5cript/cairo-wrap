@@ -22,7 +22,7 @@ namespace Cairo
         cairo_show_text(*ctx_, text_.c_str());
     }
 //---------------------------------------------------------------------------------------------------------------------
-    BoundingBox Text::calculateBounds() const
+    BoundingBox Text::calculateBounds(Pen const& line) const
     {
         BoundingBox box;
 

@@ -11,7 +11,7 @@ namespace Cairo
     public:
         Text(DrawContext* ctx, double x, double y, std::string const& text, Font const& font);
         void draw(Pen const& line, Pen const& fill = {}) override;
-        BoundingBox calculateBounds() const;
+        BoundingBox calculateBounds(Pen const& line) const;
 
     private:
         std::string text_;
