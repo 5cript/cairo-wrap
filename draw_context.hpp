@@ -16,7 +16,7 @@ namespace Cairo
             return ctx_;
         }
 
-        void fill(color_space r, color_space g, color_space b, color_space a);
+        void fill(color_space r, color_space g, color_space b, color_space a = 0xFF);
         void save();
         void restore();
 

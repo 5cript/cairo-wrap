@@ -17,9 +17,22 @@ namespace Cairo
 
         Pen& operator=(RGBA const& color);
         Pen() = default;
-        Pen(double width, RGBA color);
-        Pen(RGBA color);
-        Pen(RGB color);
+
+        constexpr Pen(double width, RGBA color)
+            : width{width}
+            , color{std::move(color)}
+        {
+        }
+        constexpr Pen(RGBA color)
+            : width{1}
+            , color{std::move(color)}
+        {
+        }
+        constexpr Pen(RGB color)
+            : width{1}
+            , color{color}
+        {
+        }
     };
 
     #define PRESERVE true

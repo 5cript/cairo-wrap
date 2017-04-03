@@ -17,6 +17,14 @@ namespace Cairo
         {
             return y2 - y;
         }
+        double xCenter() const
+        {
+            return x + (x2-x)/2.;
+        }
+        double yCenter() const
+        {
+            return y + (y2-y)/2.;
+        }
         void move(double x, double y)
         {
             this->x = x;

@@ -9,4 +9,9 @@ namespace Cairo
     {
 
     }
+    void Shape::move(double x, double y) noexcept
+    {
+        x_ = x;
+        y_ = y;
+    }
 }
