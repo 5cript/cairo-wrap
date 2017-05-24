@@ -42,6 +42,21 @@ namespace Cairo
         return box;
     }
 //---------------------------------------------------------------------------------------------------------------------
+    double Text::getBaselineDisplacement(Pen const& line) const
+    {
+        ctx_->save();
+        cairo_select_font_face(*ctx_, font_.family.c_str(), font_.slant, font_.weight);
+        cairo_set_font_size(*ctx_, font_.size);
+        applyPen(ctx_, line);
+        cairo_text_extents_t te;
+        cairo_font_extents_t fe;
+        cairo_text_extents(*ctx_, text_.c_str(), &te);
+        cairo_font_extents (*ctx_, &fe);
+        ctx_->restore();
+
+        return (y_ - te.y_bearing + te.height) - (y_ - te.y_bearing) + te.y_bearing;
+    }
+//---------------------------------------------------------------------------------------------------------------------
     void Text::setFont(Font const& font)
     {
         font_ = font;
