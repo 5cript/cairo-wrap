@@ -5,3 +5,4 @@
 #include "line.hpp"
 #include "text.hpp"
 #include "arc.hpp"
+#include "path.hpp"

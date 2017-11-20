@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+#define M_PI 3.14159265358979323846264338327950288
+
 namespace Cairo
 {
     RoundRectangle::RoundRectangle(DrawContext* ctx, double x, double y, double width, double height, double radius)
