@@ -2,7 +2,7 @@
 
 #include "core.hpp"
 #include "surface.hpp"
-
+#include "color.hpp"
 
 namespace Cairo
 {
@@ -17,6 +17,7 @@ namespace Cairo
         }
 
         void fill(color_space r, color_space g, color_space b, color_space a = 0xFF);
+        void fill(RGBA color);
         void save();
         void restore();
 

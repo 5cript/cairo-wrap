@@ -11,7 +11,7 @@ namespace Cairo
 
         void draw(Pen const& line, Pen const& fill = {}) override;
 
-    private:
+    protected:
         double x2_;
         double y2_;
     };

@@ -19,6 +19,14 @@ namespace Cairo
         cairo_paint(ctx_);
         restore();
     }
+    void DrawContext::fill(RGBA color)
+    {
+        save();
+        cairo_set_source_rgba (ctx_, color.r, color.g, color.b, color.a);
+        cairo_set_operator(ctx_, CAIRO_OPERATOR_SOURCE);
+        cairo_paint(ctx_);
+        restore();
+    }
     void DrawContext::save()
     {
         cairo_save(ctx_);
