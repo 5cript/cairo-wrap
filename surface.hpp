@@ -16,7 +16,7 @@ namespace Cairo
             return surface_;
         }
 
-        void saveToFile(std::string const& fileName);
+        void saveToFile(std::string const& fileName) const;
 
     private:
         cairo_surface_t* surface_;
