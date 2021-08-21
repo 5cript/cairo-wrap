@@ -12,7 +12,13 @@ namespace Cairo
     void applyPen(DrawContext* ctx, Pen const& pen)
     {
         cairo_set_line_width(*ctx, pen.width);
-        cairo_set_source_rgba(*ctx, pen.color.r, pen.color.g, pen.color.b, pen.color.a);
+        cairo_set_source_rgba(
+            *ctx,
+            static_cast <double> (pen.color.r) / colorMax,
+            static_cast <double> (pen.color.g) / colorMax,
+            static_cast <double> (pen.color.b) / colorMax,
+            static_cast <double> (pen.color.a) / colorMax
+        );
     }
 //---------------------------------------------------------------------------------------------------------------------
     void stroke(DrawContext* ctx, Pen const& pen, bool preserve)

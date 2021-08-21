@@ -1,4 +1,4 @@
-# Version Check
+# Version check
 cmake_minimum_required(VERSION 3.11)
 
 # Default CXX Standard
@@ -13,20 +13,18 @@ if (NOT EXISTS ${CMAKE_BINARY_DIR}/CMakeCache.txt)
 	endif()
 endif()
 
+set(cairo-wrap "cairo_wrap")
+
 # Project
 project(cairo-wrap)
 
-# Add Files
+# Add files
 file(GLOB sources "*.cpp")
 
-# Add Executable
-add_library(cairo_wrap STATIC ${sources})
+# Add library
+add_library(${cairo-wrap} STATIC ${sources})
 
-target_link_libraries(cairo_wrap -lcairo)
+target_link_libraries(${cairo-wrap} cairo)
 
 # Compiler Options
-set(DEBUG_OPTIONS -fexecptions -g -Wall -pedantic-errors -pedantic)
-target_compile_options(cairo_wrap PUBLIC "$<$<CONFIG:DEBUG>:${DEBUG_OPTIONS}>")
-
-set(RELEASE_OPTIONS -fexceptions -O3 -Wall -pedantic)
-target_compile_options(cairo_wrap PUBLIC "$<$<CONFIG:RELEASE>:${RELEASE_OPTIONS}>")
+target_compile_options(${cairo-wrap} PUBLIC -fexceptions -std=c++14 -O3 -Wall -pedantic-errors -pedantic)

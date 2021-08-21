@@ -11,7 +11,7 @@ namespace Cairo
     {
         cairo_surface_destroy(surface_);
     }
-    void Surface::saveToFile(std::string const& fileName)
+    void Surface::saveToFile(std::string const& fileName) const
     {
         cairo_surface_write_to_png(surface_, fileName.c_str());
     }
