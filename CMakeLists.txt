@@ -1,10 +1,10 @@
 # Version check
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.11)
 
 # Project
 project(cairo-wrap)
 
-if(PROJECT_IS_TOP_LEVEL)
+if(CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
 	# Default CXX Standard
 	if (NOT "${CMAKE_CXX_STANDARD}")
 		set(CMAKE_CXX_STANDARD 17)
