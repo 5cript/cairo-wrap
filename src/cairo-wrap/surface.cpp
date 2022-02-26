@@ -1,4 +1,4 @@
-#include "surface.hpp"
+#include <cairo-wrap/surface.hpp>
 
 namespace Cairo
 {

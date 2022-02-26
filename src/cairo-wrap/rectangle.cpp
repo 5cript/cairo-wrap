@@ -1,4 +1,4 @@
-#include "rectangle.hpp"
+#include <cairo-wrap/rectangle.hpp>
 
 namespace Cairo
 {

@@ -1,4 +1,4 @@
-#include "shape.hpp"
+#include <cairo-wrap/shape.hpp>
 
 namespace Cairo
 {

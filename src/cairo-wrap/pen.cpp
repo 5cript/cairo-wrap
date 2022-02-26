@@ -1,4 +1,4 @@
-#include "pen.hpp"
+#include <cairo-wrap/pen.hpp>
 
 namespace Cairo
 {

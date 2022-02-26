@@ -1,4 +1,4 @@
-#include "text.hpp"
+#include <cairo-wrap/text.hpp>
 
 namespace Cairo
 {
